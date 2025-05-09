@@ -1,0 +1,8 @@
+*Model.sv
+Encoder_tb.v
+Normalize_tb.v
+*.mti
+*.mpf
+*.wlf
+work
+Floating_Point_Adder_Subtractor

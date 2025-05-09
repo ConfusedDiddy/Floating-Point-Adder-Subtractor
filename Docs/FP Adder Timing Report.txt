@@ -1,0 +1,128 @@
+Timing Report
+
+Slack (MET) :             12.454ns  (required time - arrival time)
+  Source:                 operand_2[25]
+                            (input port clocked by clk  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            result[24]
+                            (output port clocked by clk  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             clk
+  Path Type:              Max at Slow Process Corner
+  Requirement:            50.000ns  (clk rise@50.000ns - clk rise@0.000ns)
+  Data Path Delay:        37.521ns  (logic 11.865ns (31.622%)  route 25.656ns (68.378%))
+  Logic Levels:           41  (CARRY4=8 IBUF=1 LUT1=2 LUT2=6 LUT3=10 LUT4=4 LUT5=2 LUT6=7 OBUF=1)
+  Input Delay:            0.000ns
+  Output Delay:           0.000ns
+  Clock Uncertainty:      0.025ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.000     0.000    
+    AE22                                              0.000     0.000 r  operand_2[25] (IN)
+                         net (fo=0)                   0.000     0.000    operand_2[25]
+    AE22                 IBUF (Prop_ibuf_I_O)         0.937     0.937 r  operand_2_IBUF[25]_inst/O
+                         net (fo=8, routed)           2.009     2.946    es/operand_2_exponent[2]
+    SLICE_X0Y55          LUT4 (Prop_lut4_I1_O)        0.105     3.051 r  es/sign_INST_0_i_8/O
+                         net (fo=1, routed)           0.000     3.051    es/sign_INST_0_i_8_n_0
+    SLICE_X0Y55          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.457     3.508 f  es/sign_INST_0_i_1/CO[3]
+                         net (fo=8, routed)           0.658     4.167    es/p_0_in
+    SLICE_X2Y55          LUT1 (Prop_lut1_I0_O)        0.105     4.272 r  es/sign_INST_0/O
+                         net (fo=65, routed)          0.695     4.967    scps/swap
+    SLICE_X2Y53          LUT3 (Prop_lut3_I2_O)        0.106     5.073 r  scps/operand_2_significand_result[4]_INST_0/O
+                         net (fo=4, routed)           1.009     6.081    as/operand_2_significand[4]
+    SLICE_X3Y53          LUT6 (Prop_lut6_I0_O)        0.283     6.364 f  as/operand_2_significand_shifted[7]_INST_0_i_2/O
+                         net (fo=3, routed)           0.790     7.154    as/operand_2_significand_shifted[7]_INST_0_i_2_n_0
+    SLICE_X4Y53          LUT5 (Prop_lut5_I1_O)        0.105     7.259 r  as/operand_2_significand_shifted[0]_INST_0_i_7/O
+                         net (fo=1, routed)           0.556     7.815    as/operand_2_significand_shifted[0]_INST_0_i_7_n_0
+    SLICE_X4Y52          LUT6 (Prop_lut6_I1_O)        0.105     7.920 r  as/operand_2_significand_shifted[0]_INST_0_i_1/O
+                         net (fo=1, routed)           0.585     8.505    as/operand_2_significand_shifted[0]_INST_0_i_1_n_0
+    SLICE_X6Y52          LUT6 (Prop_lut6_I0_O)        0.105     8.610 r  as/operand_2_significand_shifted[0]_INST_0/O
+                         net (fo=3, routed)           0.789     9.399    cpa/Ladner/b[1]
+    SLICE_X11Y50         LUT2 (Prop_lut2_I0_O)        0.105     9.504 r  cpa/Ladner/LF_i_63/O
+                         net (fo=2, routed)           0.343     9.846    cpa/Ladner/LF/Level_1[0].Level_2[0].PC_0/x1[0]
+    SLICE_X11Y50         LUT3 (Prop_lut3_I0_O)        0.105     9.951 r  cpa/Ladner/LF/Level_1[0].Level_2[0].PC_0/y[1]_INST_0/O
+                         net (fo=3, routed)           0.435    10.386    cpa/Ladner/LF/Level_1[1].Level_2[0].Level_3[1].Level_4[0].PC/x0[1]
+    SLICE_X10Y50         LUT3 (Prop_lut3_I1_O)        0.126    10.512 r  cpa/Ladner/LF/Level_1[1].Level_2[0].Level_3[1].Level_4[0].PC/y[1]_INST_0/O
+                         net (fo=5, routed)           0.694    11.207    cpa/Ladner/LF/Level_1[2].Level_2[0].Level_3[2].Level_4[1].PC/x0[1]
+    SLICE_X11Y52         LUT3 (Prop_lut3_I1_O)        0.297    11.504 r  cpa/Ladner/LF/Level_1[2].Level_2[0].Level_3[2].Level_4[1].PC/y[1]_INST_0/O
+                         net (fo=9, routed)           0.772    12.276    cpa/Ladner/LF/Level_1[3].Level_2[0].Level_3[3].Level_4[3].PC/x0[1]
+    SLICE_X13Y54         LUT3 (Prop_lut3_I1_O)        0.288    12.564 r  cpa/Ladner/LF/Level_1[3].Level_2[0].Level_3[3].Level_4[3].PC/y[1]_INST_0/O
+                         net (fo=17, routed)          1.041    13.605    cpa/Ladner/LF/Level_1[4].Level_2[0].Level_3[4].Level_4[3].PC/x0[1]
+    SLICE_X13Y61         LUT3 (Prop_lut3_I1_O)        0.295    13.900 r  cpa/Ladner/LF/Level_1[4].Level_2[0].Level_3[4].Level_4[3].PC/y[1]_INST_0/O
+                         net (fo=1, routed)           0.426    14.325    cpa/Ladner/g_out[27]
+    SLICE_X13Y60         LUT3 (Prop_lut3_I0_O)        0.278    14.603 r  cpa/Ladner/s[28]_INST_0/O
+                         net (fo=4, routed)           0.371    14.974    ctrl/cpa_sign_bit
+    SLICE_X13Y60         LUT2 (Prop_lut2_I1_O)        0.267    15.241 r  ctrl/round_comp_INST_0/O
+                         net (fo=88, routed)          0.970    16.211    n1/ZOC/mode
+    SLICE_X14Y56         LUT2 (Prop_lut2_I0_O)        0.118    16.329 r  n1/ZOC/encoder_i_12/O
+                         net (fo=4, routed)           0.821    17.150    n1/ZOC/encoder/inst0_16/inst2_4/in[0]
+    SLICE_X14Y55         LUT4 (Prop_lut4_I1_O)        0.284    17.434 f  n1/ZOC/encoder/inst0_16/inst2_4/all_zero_INST_0/O
+                         net (fo=1, routed)           0.333    17.767    n1/ZOC/encoder/inst0_16/a2
+    SLICE_X13Y54         LUT1 (Prop_lut1_I0_O)        0.264    18.031 r  n1/ZOC/encoder/inst0_16/instf_4_i_3/O
+                         net (fo=3, routed)           0.660    18.691    n1/ZOC/encoder/inst0_16/instf_4/in[1]
+    SLICE_X14Y54         LUT4 (Prop_lut4_I0_O)        0.116    18.807 r  n1/ZOC/encoder/inst0_16/instf_4/out[1]_INST_0/O
+                         net (fo=3, routed)           0.341    19.148    n1/ZOC/encoder/inst0_16/out[3]
+    SLICE_X15Y55         LUT6 (Prop_lut6_I2_O)        0.283    19.431 r  n1/ZOC/encoder/inst0_16/out[1]_INST_0/O
+                         net (fo=1, routed)           0.368    19.799    n1/ZOC/encoder/y0[1]
+    SLICE_X15Y55         LUT3 (Prop_lut3_I2_O)        0.105    19.904 r  n1/ZOC/encoder/out[1]_INST_0/O
+                         net (fo=1, routed)           0.595    20.499    n1/ZOC/encoder_out[1]
+    SLICE_X15Y56         LUT2 (Prop_lut2_I0_O)        0.126    20.625 r  n1/ZOC/shamt[1]_INST_0/O
+                         net (fo=39, routed)          0.556    21.181    n1/shift/shamt[1]
+    SLICE_X13Y57         LUT6 (Prop_lut6_I2_O)        0.267    21.448 r  n1/shift/shifted_sum[25]_INST_0_i_4/O
+                         net (fo=3, routed)           0.966    22.414    n1/shift/shifted_sum[25]_INST_0_i_4_n_0
+    SLICE_X11Y59         LUT3 (Prop_lut3_I2_O)        0.119    22.533 r  n1/shift/shifted_sum[17]_INST_0_i_1/O
+                         net (fo=1, routed)           0.678    23.211    n1/shift/shifted_sum[17]_INST_0_i_1_n_0
+    SLICE_X9Y59          LUT6 (Prop_lut6_I0_O)        0.267    23.478 r  n1/shift/shifted_sum[17]_INST_0/O
+                         net (fo=2, routed)           0.751    24.229    n1/shifter_out[17]
+    SLICE_X8Y61          LUT5 (Prop_lut5_I0_O)        0.105    24.334 r  n1/shifted_sum[16]_INST_0/O
+                         net (fo=1, routed)           0.448    24.782    rnd/shifted_sum[16]
+    SLICE_X6Y62          LUT2 (Prop_lut2_I1_O)        0.105    24.887 r  rnd/rounded_significand[16]_INST_0_i_5/O
+                         net (fo=1, routed)           0.000    24.887    rnd/rounded_significand1[16]
+    SLICE_X6Y62          CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.423    25.310 r  rnd/rounded_significand[16]_INST_0_i_1/CO[3]
+                         net (fo=1, routed)           0.000    25.310    rnd/rounded_significand[16]_INST_0_i_1_n_0
+    SLICE_X6Y63          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.100    25.410 r  rnd/rounded_significand[20]_INST_0_i_1/CO[3]
+                         net (fo=1, routed)           0.000    25.410    rnd/rounded_significand[20]_INST_0_i_1_n_0
+    SLICE_X6Y64          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.178    25.588 r  rnd/rounded_significand[24]_INST_0_i_1/O[0]
+                         net (fo=1, routed)           0.461    26.049    rnd/p_0_in__0[21]
+    SLICE_X7Y64          CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.695    26.744 r  rnd/rounded_significand[20]_INST_0/CO[3]
+                         net (fo=1, routed)           0.000    26.744    rnd/rounded_significand[20]_INST_0_n_0
+    SLICE_X7Y65          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.180    26.924 r  rnd/rounded_significand[24]_INST_0/O[0]
+                         net (fo=28, routed)          0.722    27.646    ctrl/normalize_2_shamt
+    SLICE_X6Y57          LUT2 (Prop_lut2_I0_O)        0.249    27.895 r  ctrl/final_exp[3]_INST_0_i_4/O
+                         net (fo=1, routed)           0.396    28.291    ctrl/final_exp[3]_INST_0_i_4_n_0
+    SLICE_X4Y57          CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.418    28.709 r  ctrl/final_exp[3]_INST_0_i_1/CO[3]
+                         net (fo=1, routed)           0.000    28.709    ctrl/final_exp[3]_INST_0_i_1_n_0
+    SLICE_X4Y58          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.180    28.889 r  ctrl/final_exp[7]_INST_0_i_1/O[0]
+                         net (fo=2, routed)           0.679    29.569    ctrl/final_exp[7]_INST_0_i_1_n_7
+    SLICE_X3Y58          LUT4 (Prop_lut4_I3_O)        0.259    29.828 r  ctrl/special_cases[1]_INST_0_i_2/O
+                         net (fo=1, routed)           0.481    30.309    ctrl/special_cases[1]_INST_0_i_2_n_0
+    SLICE_X2Y60          LUT6 (Prop_lut6_I1_O)        0.267    30.576 r  ctrl/special_cases[1]_INST_0/O
+                         net (fo=31, routed)          0.732    31.307    p/special_cases[1]
+    SLICE_X0Y60          LUT3 (Prop_lut3_I0_O)        0.124    31.431 r  p/result[24]_INST_0/O
+                         net (fo=1, routed)           3.526    34.957    result_OBUF[24]
+    G22                  OBUF (Prop_obuf_I_O)         2.564    37.521 r  result_OBUF[24]_inst/O
+                         net (fo=0)                   0.000    37.521    result[24]
+    G22                                                               r  result[24] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       50.000    50.000 r  
+                         ideal clock network latency
+                                                      0.000    50.000    
+                         clock pessimism              0.000    50.000    
+                         clock uncertainty           -0.025    49.975    
+                         output delay                -0.000    49.975    
+  -------------------------------------------------------------------
+                         required time                         49.975    
+                         arrival time                         -37.521    
+  -------------------------------------------------------------------
+                         slack                                 12.454
